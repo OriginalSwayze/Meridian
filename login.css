@@ -1,0 +1,68 @@
+/* Meridian — the "Sign in to Steam" window shown while Steam starts:
+   the aurora, a spinning gradient ring, a glowing progress line. */
+@import url("./core/tokens.css");
+@import url("./core/base.css");
+@import url("./core/backdrop.css");
+
+@keyframes mr-orbit { to { transform: rotate(360deg); } }
+@keyframes mr-text-glow { 0%, 100% { opacity: 0.55; } 50% { opacity: 1; } }
+
+html .Login,
+html .Login.AnimatedBackground,
+html .LoginAnimatedBackground { background: transparent !important; }
+html .Login.AnimatedBackground::before,
+html .LoginAnimatedBackground::after,
+html .Login video { display: none !important; }
+
+html .Login .LoginStatusContainer,
+html .Login .SpinnerLoaderContainer { background: transparent !important; }
+
+/* The ring */
+html .Login .SpinnerLoaderContainer { position: relative; }
+html .Login .SpinnerLoaderContainer > img { opacity: 0 !important; }
+html .Login .SpinnerLoaderContainer::before {
+    content: "";
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 120px; height: 120px;
+    margin: -60px 0 0 -60px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, var(--mr-a), var(--mr-b), var(--mr-c), transparent 75%);
+    -webkit-mask: radial-gradient(circle, transparent 54px, #000 55px);
+    mask: radial-gradient(circle, transparent 54px, #000 55px);
+    filter: drop-shadow(0 0 12px var(--mr-b));
+    animation: mr-orbit 1.4s linear infinite;
+}
+html .Login .SpinnerLoaderContainer::after {
+    content: "";
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 22px; height: 22px;
+    margin: -11px 0 0 -11px;
+    border-radius: 50%;
+    background: conic-gradient(from 210deg, var(--mr-a), var(--mr-b), var(--mr-c), var(--mr-a));
+    box-shadow: 0 0 30px var(--mr-b);
+    animation: mr-orbit 6s linear infinite;
+}
+
+html .Login .LoadingStatus,
+html .Login .LoadingStatus > .LoginStatus {
+    font-family: var(--mr-font-display) !important;
+    color: var(--mr-fg-2) !important;
+    letter-spacing: 0.08em;
+    animation: mr-text-glow 2.4s ease-in-out infinite;
+}
+html .Login .ProgressBar {
+    background: var(--mr-grad) !important;
+    border-radius: 99px !important;
+    box-shadow: 0 0 12px var(--mr-b);
+}
+html .Login .Avatar img {
+    border-radius: 50% !important;
+    box-shadow: 0 0 0 2px var(--mr-a), 0 0 24px var(--mr-b);
+}
+html .Login .UserContainer > .PersonaName {
+    font-family: var(--mr-font-display) !important;
+    font-weight: 700 !important;
+    color: var(--mr-fg) !important;
+}

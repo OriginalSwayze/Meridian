@@ -1,0 +1,13 @@
+/* Meridian — entry for Steam client windows (main window, modal windows).
+   Only @imports: the order is the cascade. */
+@import url("./core/tokens.css");
+@import url("./core/base.css");
+@import url("./core/backdrop.css");
+@import url("./client/controls.css");
+@import url("./client/window.css");
+@import url("./client/library.css");
+@import url("./client/gamepage.css");
+@import url("./client/dock.css");
+@import url("./client/settings.css");
+@import url("./client/downloads.css");
+@import url("./client/fx.css");

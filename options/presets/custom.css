@@ -1,0 +1,8 @@
+/* Meridian color world: Custom — the four colors on the Colors page */
+:root {
+    --mr-p-a: var(--mr-user-a);
+    --mr-p-b: var(--mr-user-b);
+    --mr-p-c: var(--mr-user-c);
+    --mr-p-base: var(--mr-user-base);
+    --mr-p-on-accent: #06070B;
+}

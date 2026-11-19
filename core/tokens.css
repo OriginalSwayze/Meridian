@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Meridian — design tokens.
+   Every color, size, curve and duration the theme uses lives here.
+   Presets (options/presets/*.css) only set --mr-p-*; everything else derives.
+   ========================================================================== */
+
+:root {
+    /* ---- Palette: preset inputs (defaults = Aurora) ---------------------- */
+    --mr-a: var(--mr-p-a, #5EF0C8);
+    --mr-b: var(--mr-p-b, #7B6CFF);
+    --mr-c: var(--mr-p-c, #FF6FD8);
+    --mr-base: var(--mr-p-base, #06070B);
+    --mr-on-accent: var(--mr-p-on-accent, #06070B);
+
+    /* ---- Derived accent ------------------------------------------------- */
+    --mr-accent: var(--mr-a);
+    --mr-grad: linear-gradient(120deg, var(--mr-a) 0%, var(--mr-b) 55%, var(--mr-c) 100%);
+    --mr-grad-loop: linear-gradient(90deg, var(--mr-a), var(--mr-b), var(--mr-c), var(--mr-b), var(--mr-a));
+    --mr-grad-soft: linear-gradient(120deg,
+        color-mix(in oklab, var(--mr-a) 22%, transparent),
+        color-mix(in oklab, var(--mr-b) 18%, transparent) 60%,
+        color-mix(in oklab, var(--mr-c) 16%, transparent));
+    --mr-accent-08: color-mix(in oklab, var(--mr-a) 8%, transparent);
+    --mr-accent-14: color-mix(in oklab, var(--mr-a) 14%, transparent);
+    --mr-accent-24: color-mix(in oklab, var(--mr-a) 24%, transparent);
+    --mr-accent-40: color-mix(in oklab, var(--mr-a) 40%, transparent);
+    --mr-accent-text: color-mix(in oklab, var(--mr-a) 80%, white);
+    --mr-glow: 0 0 0 1px color-mix(in oklab, var(--mr-a) 40%, transparent),
+               0 8px 32px -6px color-mix(in oklab, var(--mr-b) 55%, transparent);
+
+    /* ---- Neutrals ------------------------------------------------------- */
+    --mr-fg: #EEF0F7;
+    --mr-fg-2: #B4B9CB;
+    --mr-fg-3: #7D8399;
+    --mr-fg-4: #50566A;
+    --mr-line: rgba(255, 255, 255, 0.07);
+    --mr-line-2: rgba(255, 255, 255, 0.12);
+    --mr-line-3: rgba(255, 255, 255, 0.2);
+    --mr-hover: rgba(255, 255, 255, 0.055);
+    --mr-press: rgba(255, 255, 255, 0.09);
+
+    /* Status */
+    --mr-ok: #4BE39B;
+    --mr-warn: #FFC453;
+    --mr-bad: #FF5C7A;
+    --mr-info: #6BB8FF;
+
+    /* ---- Glass ---------------------------------------------------------- */
+    --mr-tint: var(--mr-setting-tint, 55%);
+    --mr-glass: color-mix(in oklab, color-mix(in oklab, var(--mr-base) 88%, var(--mr-b)) var(--mr-tint), transparent);
+    --mr-glass-strong: color-mix(in oklab, color-mix(in oklab, var(--mr-base) 92%, var(--mr-b)) min(100%, calc(var(--mr-tint) + 25%)), transparent);
+    --mr-glass-solid: color-mix(in oklab, var(--mr-base) 90%, var(--mr-b));
+    --mr-blur: var(--mr-setting-blur, 28px);
+    --mr-glass-filter: blur(var(--mr-blur)) saturate(160%);
+    --mr-glass-edge: inset 0 1px 0 rgba(255, 255, 255, 0.07), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    --mr-shadow-1: 0 2px 8px rgba(0, 0, 0, 0.25);
+    --mr-shadow-2: 0 12px 40px -8px rgba(0, 0, 0, 0.55), 0 2px 6px rgba(0, 0, 0, 0.3);
+    --mr-shadow-3: 0 30px 80px -12px rgba(0, 0, 0, 0.7), 0 4px 14px rgba(0, 0, 0, 0.4);
+
+    /* ---- Shape ---------------------------------------------------------- */
+    --mr-r: var(--mr-setting-radius, 18px);
+    --mr-r-lg: calc(var(--mr-r) * 1.35);
+    --mr-r-md: calc(var(--mr-r) * 0.7);
+    --mr-r-sm: calc(var(--mr-r) * 0.45);
+    --mr-r-pill: 999px;
+    --mr-gap: 10px;
+
+    /* ---- Type ----------------------------------------------------------- */
+    --mr-font: "Segoe UI Variable Text", "Segoe UI Variable", "Segoe UI", "Inter", system-ui, sans-serif;
+    --mr-font-display: "Segoe UI Variable Display", "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
+    --mr-font-mono: "Cascadia Code", "Cascadia Mono", "JetBrains Mono", Consolas, monospace;
+
+    /* ---- Motion --------------------------------------------------------- */
+    --mr-ease: cubic-bezier(0.22, 1, 0.36, 1);          /* out-expo-ish */
+    --mr-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* slight overshoot */
+    --mr-ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+    --mr-t-1: 120ms;
+    --mr-t-2: 220ms;
+    --mr-t-3: 420ms;
+    --mr-t-4: 700ms;
+    --mr-motion: 1;          /* 0 under Motion: Still */
+    --mr-ambient: running;   /* paused under Calm / Still */
+
+    /* Cursor light */
+    --mr-spot-size: 260px;
+    --mr-spot: radial-gradient(var(--mr-spot-size) circle at var(--mr-mx, -999px) var(--mr-my, -999px),
+        color-mix(in oklab, var(--mr-a) 13%, transparent), transparent 70%);
+}

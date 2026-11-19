@@ -1,0 +1,8 @@
+/* Meridian color world: Monochrome — pure white light on graphite */
+:root {
+    --mr-p-a: #FFFFFF;
+    --mr-p-b: #B8BDC9;
+    --mr-p-c: #6E7385;
+    --mr-p-base: #08080A;
+    --mr-p-on-accent: #08080A;
+}

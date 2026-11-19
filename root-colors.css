@@ -1,0 +1,26 @@
+/* Meridian — user colors (Millennium "Colors" page).
+   Used only when Look → Color world is set to "Custom".
+   Opaque #hex only: Millennium cannot store anything else here. */
+
+:root {
+    /*
+     * @name Custom: primary
+     * @description The main accent (selection, links, the start of every gradient).
+     */
+    --mr-user-a: #5EF0C8;
+    /*
+     * @name Custom: secondary
+     * @description The middle of the gradient and the second aurora light.
+     */
+    --mr-user-b: #7B6CFF;
+    /*
+     * @name Custom: tertiary
+     * @description The end of the gradient and the third aurora light.
+     */
+    --mr-user-c: #FF6FD8;
+    /*
+     * @name Custom: base
+     * @description The deepest background color behind the aurora.
+     */
+    --mr-user-base: #06070B;
+}

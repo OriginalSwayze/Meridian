@@ -1,0 +1,3 @@
+/* Backdrop: Void — no aurora, deep black */
+html::before, html::after { display: none !important; }
+:root { --mr-p-base: #000000; }

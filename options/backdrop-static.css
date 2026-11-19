@@ -1,0 +1,2 @@
+/* Backdrop: Static — the aurora stands still */
+html::before, html::after { animation: none !important; }

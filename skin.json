@@ -1,0 +1,163 @@
+{
+    "name": "Meridian",
+    "author": "OriginalSwayze",
+    "description": "Steam rebuilt as a floating, spatial workspace: glass islands over a living aurora, a pill navigator, a centered dock, a cinematic game page and five hand-tuned color worlds.",
+    "version": "1.0.0",
+    "tags": ["Dark", "Glass", "Animated", "Modern", "Floating"],
+    "header_image": "https://raw.githubusercontent.com/OriginalSwayze/Meridian/main/media/library.gif",
+    "splash_image": "https://raw.githubusercontent.com/OriginalSwayze/Meridian/main/media/gamepage.png",
+    "github": { "owner": "OriginalSwayze", "repo_name": "Meridian" },
+
+    "RootColors": "root-colors.css",
+    "Steam-WebKit": "webkit.css",
+
+    "Conditions": {
+        "Color world": {
+            "description": "The palette the whole client is painted in: the aurora behind everything, the accent gradient, the glow on Play.",
+            "tab": "Look",
+            "default": "Aurora",
+            "values": {
+                "Aurora":     { "TargetCss": { "affects": [".*"], "src": "options/presets/aurora.css" } },
+                "Ember":      { "TargetCss": { "affects": [".*"], "src": "options/presets/ember.css" } },
+                "Glacier":    { "TargetCss": { "affects": [".*"], "src": "options/presets/glacier.css" } },
+                "Verdant":    { "TargetCss": { "affects": [".*"], "src": "options/presets/verdant.css" } },
+                "Sakura":     { "TargetCss": { "affects": [".*"], "src": "options/presets/sakura.css" } },
+                "Monochrome": { "TargetCss": { "affects": [".*"], "src": "options/presets/mono.css" } },
+                "Custom":     { "TargetCss": { "affects": [".*"], "src": "options/presets/custom.css" } }
+            }
+        },
+        "Backdrop": {
+            "description": "What lives behind the glass. Aurora: slow drifting light. Static: the same light, frozen. Void: pure deep black, maximum contrast.",
+            "tab": "Look",
+            "default": "Aurora",
+            "values": {
+                "Aurora": {},
+                "Static": { "TargetCss": { "affects": [".*"], "src": "options/backdrop-static.css" } },
+                "Void":   { "TargetCss": { "affects": [".*"], "src": "options/backdrop-void.css" } }
+            }
+        },
+        "Grain": {
+            "description": "A fine film grain over the backdrop that keeps gradients from banding.",
+            "tab": "Look",
+            "default": "On",
+            "values": {
+                "On": {},
+                "Off": { "TargetCss": { "affects": [".*"], "src": "options/grain-off.css" } }
+            }
+        },
+        "Corner radius": {
+            "description": "How round the islands, cards and buttons are.",
+            "tab": "Look",
+            "default": 18,
+            "slider": { "cssVariable": "--mr-setting-radius", "min": 0, "max": 32, "step": 2, "unit": "px" }
+        },
+        "Glass blur": {
+            "description": "How strongly the glass islands frost what is behind them.",
+            "tab": "Look",
+            "default": 28,
+            "slider": { "cssVariable": "--mr-setting-blur", "min": 0, "max": 60, "step": 4, "unit": "px" }
+        },
+        "Glass tint": {
+            "description": "How opaque the glass islands are: lower shows more of the aurora.",
+            "tab": "Look",
+            "default": 55,
+            "slider": { "cssVariable": "--mr-setting-tint", "min": 10, "max": 95, "step": 5, "unit": "%" }
+        },
+
+        "Layout": {
+            "description": "Islands: the game list and the page float as separate rounded panels with gaps. Seamless: edge to edge, no gaps.",
+            "tab": "Layout",
+            "default": "Islands",
+            "values": {
+                "Islands": {},
+                "Seamless": { "TargetCss": { "affects": ["^Steam$"], "src": "options/layout-seamless.css" } }
+            }
+        },
+        "Navigator": {
+            "description": "Where the Store / Library / Community pill sits.",
+            "tab": "Layout",
+            "default": "Center",
+            "values": {
+                "Center": {},
+                "Left": { "TargetCss": { "affects": ["^Steam$"], "src": "options/nav-left.css" } }
+            }
+        },
+        "Game list density": {
+            "description": "Row height in the library game list.",
+            "tab": "Layout",
+            "default": "Comfortable",
+            "values": {
+                "Comfortable": {},
+                "Compact": { "TargetCss": { "affects": ["^Steam$"], "src": "options/list-compact.css" } }
+            }
+        },
+        "What's New shelf": {
+            "description": "The \"What's New\" carousel at the top of the library home.",
+            "tab": "Layout",
+            "default": "Show",
+            "values": {
+                "Show": {},
+                "Hide": { "TargetCss": { "affects": ["^Steam$"], "src": "options/hide-whats-new.css" } }
+            }
+        },
+        "Dock labels": {
+            "description": "The text labels of the dock buttons (Add a Game, Downloads, Friends): only on hover, or always.",
+            "tab": "Layout",
+            "default": "On hover",
+            "values": {
+                "On hover": {},
+                "Always": { "TargetCss": { "affects": ["^Steam$"], "src": "options/dock-labels.css" } }
+            }
+        },
+
+        "Motion": {
+            "description": "Full: every transition, the drifting aurora, the Play shimmer, cover tilt and cursor light. Calm: hovers and transitions only. Still: no theme motion at all.",
+            "tab": "Motion",
+            "default": "Full",
+            "values": {
+                "Full": {},
+                "Calm":  { "TargetCss": { "affects": [".*"], "src": "options/motion-calm.css" } },
+                "Still": { "TargetCss": { "affects": [".*"], "src": "options/motion-still.css" } }
+            }
+        },
+        "Cover hover": {
+            "description": "What library covers do under the cursor. Tilt: they turn toward the cursor in 3D with a glare. Lift: they rise and glow. Off: nothing.",
+            "tab": "Motion",
+            "default": "Tilt",
+            "values": {
+                "Tilt": {},
+                "Lift": { "TargetCss": { "affects": ["^Steam$"], "src": "options/covers-lift.css" } },
+                "Off":  { "TargetCss": { "affects": ["^Steam$"], "src": "options/covers-off.css" } }
+            }
+        },
+        "Cursor light": {
+            "description": "A soft accent light that follows the cursor across islands and cards.",
+            "tab": "Motion",
+            "default": "On",
+            "values": {
+                "On": {},
+                "Off": { "TargetCss": { "affects": ["^Steam$"], "src": "options/cursor-light-off.css" } }
+            }
+        },
+
+        "Privacy": {
+            "description": "Blurs your account name and wallet in the top bar until hovered: handy for streaming.",
+            "tab": "Extras",
+            "default": "Off",
+            "values": {
+                "Off": {},
+                "Blur": { "TargetCss": { "affects": ["^Steam$"], "src": "options/privacy.css" } }
+            }
+        }
+    },
+
+    "Patches": [
+        { "MatchRegexString": "^Steam$",                    "TargetCss": "main.css",    "TargetJs": "js/main.js" },
+        { "MatchRegexString": ".ModalDialogPopup",          "TargetCss": "main.css" },
+        { "MatchRegexString": ".FullModalOverlay",          "TargetCss": "main.css" },
+        { "MatchRegexString": ".friendsui-container",       "TargetCss": "friends.css" },
+        { "MatchRegexString": ".ContextMenuPopup",          "TargetCss": "popup.css" },
+        { "MatchRegexString": ".DesktopToastContainer",     "TargetCss": "toast.css" },
+        { "MatchRegexString": "^Sign in to Steam$",         "TargetCss": "login.css" }
+    ]
+}
