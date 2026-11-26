@@ -1,6 +1,6 @@
 # Meridian
 
-**Steam rebuilt as a floating, spatial workspace.** A [Millennium](https://steambrew.app) theme for the Steam client.
+**Steam rebuilt as a floating, spatial workspace.** A Steam client theme for [Beyond Steam](https://github.com/OriginalSwayze/Beyond-Steam) and [Millennium](https://steambrew.app).
 
 ![Meridian: library](media/library.gif)
 
@@ -15,13 +15,14 @@
 
 ## Install
 
-1. Install [Millennium](https://steambrew.app).
-2. Find **Meridian** in the Millennium theme browser, or download this repository into `Steam/millennium/themes/Meridian`.
-3. Open **Steam → Millennium → Themes** and pick **Meridian**.
+- **With [Beyond Steam](https://github.com/OriginalSwayze/Beyond-Steam) (easiest):** in Steam press **Ctrl+Shift+B**, open
+  **Get more** and install **Meridian**.
+- **By hand:** download **Meridian.zip** from the [latest release](https://github.com/OriginalSwayze/Meridian/releases/latest) and unzip
+  it into `%APPDATA%\Beyond Steam\themes\Meridian` (Beyond Steam) or `Steam\millennium\themes\Meridian` (Millennium).
 
 ## Options
 
-Open **Millennium → Themes → Meridian** to change:
+In Beyond Steam's **Theme options** tab (or **Millennium → Themes → Meridian**) you can change:
 
 Color world (Aurora, Ember, Glacier, Verdant, Sakura, Monochrome, Custom) · Backdrop · Grain · Corner radius · Glass blur · Glass tint · Layout (Islands / Seamless) · Navigator · Game list density · What's New · Dock labels · Motion (Full / Calm / Still) · Cover hover · Cursor light · Privacy blur
 
